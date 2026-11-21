@@ -43,5 +43,5 @@ export default function Providers({ children }) {
   const logout = async () => { await authClient.signOut(); setToken(null); setUser(null); };
   const refreshUser = async () => session && syncUser(session);
 
-  return <Ctx.Provider value={{ user, loading: loading || isPending, logout, refreshUser, role: user?.role }}>{children}</Ctx.Provider>;
+  return <Ctx.Provider value={{ user, setUser, loading: loading || isPending, logout, refreshUser, role: user?.role }}>{children}</Ctx.Provider>;
 }
