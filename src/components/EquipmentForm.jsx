@@ -4,10 +4,22 @@ import { CATEGORIES, RENTAL_TYPES, uploadImage, notify } from "@/lib/utils";
 
 const blank = { name: "", description: "", category: CATEGORIES[0], location: "", price: "", rentalType: "daily", quantity: 1, condition: "Good", brand: "", model: "", image: "", terms: "" };
 
+
+function Field({ label, children, full }) {
+  return (
+    <label className={`form-control ${full ? "md:col-span-2" : ""}`}>
+      <span className="label-text mb-1">{label}</span>
+      {children}
+    </label>
+  );
+}
+
+const inp = "input input-bordered w-full";
+
 export default function EquipmentForm({ initial, onSubmit, submitText = "Submit", showStatus = true }) {
   const [f, setF] = useState({ ...blank, ...initial });
   const [busy, setBusy] = useState(false);
-  const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
+  const set = (k) => (e) => setF((prev) => ({ ...prev, [k]: e.target.value }));
 
   const submit = async (e) => {
     e.preventDefault();
@@ -21,12 +33,14 @@ export default function EquipmentForm({ initial, onSubmit, submitText = "Submit"
     } catch (err) { notify("error", err.message); }
     setBusy(false);
   };
-  const Field = ({ label, children, full }) => (
-    <label className={`form-control ${full ? "md:col-span-2" : ""}`}><span className="label-text mb-1">{label}</span>{children}</label>
-  );
-  const inp = "input input-bordered w-full";
+
+  
+  const blockEnter = (e) => {
+    if (e.key === "Enter" && e.target.tagName === "INPUT") e.preventDefault();
+  };
+
   return (
-    <form onSubmit={submit} className="grid md:grid-cols-2 gap-4 bg-base-100 border border-base-300 rounded-xl p-5 md:p-6">
+    <form onSubmit={submit} onKeyDown={blockEnter} className="grid md:grid-cols-2 gap-4 bg-base-100 border border-base-300 rounded-xl p-5 md:p-6">
       <Field label="Equipment Name"><input required className={inp} value={f.name} onChange={set("name")} /></Field>
       <Field label="Category"><select className="select select-bordered w-full" value={f.category} onChange={set("category")}>{CATEGORIES.map((c) => <option key={c}>{c}</option>)}</select></Field>
       <Field label="Location"><input required className={inp} value={f.location} onChange={set("location")} /></Field>
@@ -37,7 +51,7 @@ export default function EquipmentForm({ initial, onSubmit, submitText = "Submit"
       <Field label="Brand"><input required className={inp} value={f.brand} onChange={set("brand")} /></Field>
       <Field label="Model"><input required className={inp} value={f.model} onChange={set("model")} /></Field>
       <Field label="Equipment Image (imgbb upload)">
-        <input type="file" accept="image/*" className="file-input file-input-bordered w-full" onChange={(e) => setF({ ...f, file: e.target.files[0] })} />
+        <input type="file" accept="image/*" className="file-input file-input-bordered w-full" onChange={(e) => setF((prev) => ({ ...prev, file: e.target.files[0] }))} />
       </Field>
       <Field label="Description" full><textarea required rows={3} className="textarea textarea-bordered" value={f.description} onChange={set("description")} /></Field>
       <Field label="Rental Terms and Conditions" full><textarea required rows={3} className="textarea textarea-bordered" value={f.terms} onChange={set("terms")} /></Field>
