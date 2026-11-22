@@ -31,7 +31,7 @@ export default function Navbar() {
           </div>
           <Logo />
         </div>
-        <div className="navbar-center hidden lg:flex"><ul className="menu menu-horizontal gap-1">{items}</ul></div>
+        <div className ="navbar-center hidden lg:flex"><ul className="menu menu-horizontal gap-1">{items}</ul></div>
         <div className="navbar-end gap-2">
           <ThemeToggle />
           {loading ? null : user ? (
