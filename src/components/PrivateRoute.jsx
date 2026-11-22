@@ -7,7 +7,7 @@ import { Spinner } from "./ui";
 
 export default function PrivateRoute({ roles, children }) {
   const { user, loading } = useAuth();
-  const router = useRouter();
+  const router =  useRouter();
   const path = usePathname();
   useEffect(() => {
     if (!loading && !user) router.replace(`/login?redirect=${encodeURIComponent(path)}`);
