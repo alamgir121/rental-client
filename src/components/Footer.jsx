@@ -13,9 +13,9 @@ export default function Footer() {
           <Logo />
           <p className="opacity-70 max-w-md">RentEase connects equipment owners with customers through a transparent, secure rental marketplace.</p>
           <div className="flex gap-3">
-            <a className="btn btn-circle btn-sm btn-outline" href="#" aria-label="X"><XLogo /></a>
-            <a className="btn btn-circle btn-sm btn-outline" href="#" aria-label="Facebook"><Facebook size={16} /></a>
-            <a className="btn btn-circle btn-sm btn-outline" href="#" aria-label="LinkedIn"><Linkedin size={16} /></a>
+            <a className="btn btn-circle btn-sm btn-outline" href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X"><XLogo /></a>
+            <a className="btn btn-circle btn-sm btn-outline" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Facebook size={16} /></a>
+            <a className="btn btn-circle btn-sm btn-outline" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={16} /></a>
           </div>
         </div>
         <div>
