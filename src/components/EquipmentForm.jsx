@@ -40,7 +40,7 @@ export default function EquipmentForm({ initial, onSubmit, submitText = "Submit"
   };
 
   return (
-    <form onSubmit={submit} onKeyDown={blockEnter} className="grid md:grid-cols-2 gap-4 bg-base-100 border border-base-300 rounded-xl p-5 md:p-6">
+    <form onSubmit={submit} onKeyDown ={blockEnter} className="grid md:grid-cols-2 gap-4 bg-base-100 border border-base-300 rounded-xl p-5 md:p-6">
       <Field label="Equipment Name"><input required className={inp} value={f.name} onChange={set("name")} /></Field>
       <Field label="Category"><select className="select select-bordered w-full" value={f.category} onChange={set("category")}>{CATEGORIES.map((c) => <option key={c}>{c}</option>)}</select></Field>
       <Field label="Location"><input required className={inp} value={f.location} onChange={set("location")} /></Field>
