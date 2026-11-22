@@ -7,7 +7,7 @@ import { money } from "@/lib/utils";
 
 export default function EquipmentCard({ item }) {
   const { user } = useAuth();
-  const router = useRouter();
+  const router =  useRouter();
   const available = item.quantity > 0;
   const go = () => router.push(user ? `/equipment/${item._id}` : `/login?redirect=${encodeURIComponent(`/equipment/${item._id}`)}`);
   return (
