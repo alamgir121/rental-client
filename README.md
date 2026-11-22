@@ -4,7 +4,7 @@
 RentEase is an equipment rental marketplace. Owners list their equipment for rent, customers browse, book and pay securely online, and admins manage users, listings and rentals through a transparent, role-based platform.
 
 ## Live URL
-https://rental-client-omega.vercel.app
+ https://rental-client-omega.vercel.app
 
 
 ## Key Features
