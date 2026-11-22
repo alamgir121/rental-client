@@ -37,7 +37,7 @@ export default function Register() {
         </form>
         <div className="divider">OR</div>
         <button onClick={google} className="btn btn-outline w-full">Sign up with Google</button>
-        <p className="text-center text-sm">Already registered? <Link href="/login" className="link link-primary">Login</Link></p>
+        <p className="text-center text-sm">Already registered?  <Link href="/login" className="link link-primary">Login</Link></p>
       </div>
     </div>
   );
