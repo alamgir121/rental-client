@@ -28,7 +28,7 @@ export async function uploadImage(file) {
 }
 export const FALLBACK_REVIEWS = [
   { name: "Rafiq Ahmed", rating: 5, comment: "Rented a concrete mixer for a weekend. Smooth booking, fair price and the owner was very helpful." },
-  { name: "Nusrat Jahan", rating: 5, comment: "Found a professional camera kit within minutes. Payment was secure and pickup was hassle free." },
+  { name: "Hossain", rating: 5, comment: "Found a professional camera kit within minutes. Payment was secure and pickup was hassle free." },
   { name: "Tanvir Hasan", rating: 4, comment: "Great marketplace for event gear. Delivery was on time and everything worked perfectly." },
-  { name: "Sadia Rahman", rating: 5, comment: "As an owner I earn extra from idle machines. The dashboard makes tracking earnings easy." },
+  { name: "Rahman", rating: 5, comment: "As an owner I earn extra from idle machines. The dashboard makes tracking earnings easy." },
 ];
