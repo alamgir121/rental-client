@@ -30,7 +30,7 @@ export default function Footer() {
           <ul className="space-y-2 opacity-80 text-sm">
             <li className="flex gap-2"><MapPin size={16} /> Dhaka, Bangladesh</li>
             <li className="flex gap-2"><Phone size={16} /> +880 1700-000000</li>
-            <li className="flex gap-2"><Mail size={16} /> support@gmail.com</li>
+            <li className="flex gap-2"><Mail size={16} /> rental@gmail.com</li>
           </ul>
         </div>
       </div>
