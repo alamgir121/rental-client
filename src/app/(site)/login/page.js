@@ -25,9 +25,9 @@ export default function Login() {
     <div className="page-wrap py-16 flex justify-center">
       <div className="w-full max-w-md bg-base-100 border border-base-300 rounded-2xl p-8 shadow-sm space-y-5">
         <h1 className="font-display text-3xl font-bold text-center">Welcome back</h1>
-        <form onSubmit={submit} className="space-y-4">
-          <input name="email" type="email" required placeholder="Email" className="input input-bordered w-full" />
-          <input name="password" type="password" required placeholder="Password" className="input input-bordered w-full" />
+        <form onSubmit={submit} className="space-y-4" autoComplete="off">
+          <input name="email" type="email" required placeholder="Email" autoComplete="off" className="input input-bordered w-full" />
+          <input name="password" type="password" required placeholder="Password" autoComplete="new-password" className="input input-bordered w-full" />
           <button disabled={busy} className="btn btn-primary w-full">{busy && <span className="loading loading-spinner" />}Login</button>
         </form>
         <div className="divider">OR</div>
